@@ -1721,7 +1721,7 @@ section,
   font-size: 20px;
   color: (--default-color);
   font-weight: 700;
-  margin-bottom: 15px;
+  margin: 0;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links {

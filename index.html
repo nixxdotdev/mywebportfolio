@@ -465,7 +465,7 @@
 
               <div class="resume-item">
                 <h4>Bachelor of Science in Computer Science</h4>
-                <h5>2019 - 2024</h5>
+                <h5>2019 - 2025</h5>
                 <p class="company"><i class="bi bi-building"></i> Norzagaray College</p>
               </div>
 
@@ -507,8 +507,8 @@
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item">
                   <div class="portfolio-wrap">
                     <a href="https://nc-gradacad.vercel.app/" target="_blank">
-                      <video src="assets/img/portfolio/gradacad.mp4" class="video-fluid" alt="Portfolio Image"
-                        loading="lazy" autoplay loop muted></video>
+                      <video src="assets/img/portfolio/gradacad.mp4" class="video-fluid portfolio-video" alt="GRADACAD"
+                        loop muted playsinline></video>
 
                       <div class="portfolio-info">
                         <div class="content">
@@ -523,8 +523,8 @@
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item">
                   <div class="portfolio-wrap">
                     <a href="https://bloom-birth.vercel.app/" target="_blank">
-                      <video src="assets/img/portfolio/bloombirth.mp4" class="video-fluid" alt="Portfolio Image"
-                        loading="lazy" autoplay loop muted></video>
+                      <video src="assets/img/portfolio/bloombirth.mp4" class="video-fluid portfolio-video"
+                        alt="BloomBirth" loop muted playsinline></video>
                       <div class="portfolio-info">
                         <div class="content">
                           <h4>BloomBirth: Pregnancy Records and Monitoring Desktop App</h4>
@@ -537,12 +537,27 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item">
                   <div class="portfolio-wrap">
-                    <a href="">
-                      <video src="assets/img/portfolio/RIMS.mp4" class="video-fluid" alt="Portfolio Image"
-                        loading="lazy" autoplay loop muted></video>
+                    <a href="RoboTrack.apk" download>
+                      <video src="assets/img/portfolio/RIMS.mp4" class="video-fluid portfolio-video" alt="ROBOTRACK"
+                        loop muted playsinline></video>
                       <div class="portfolio-info">
                         <div class="content">
-                          <h4>RIMS Mobile: Robotics Inventory Management System</h4>
+                          <h4>ROBOTRACK: Robotics Inventory Management System Mobile App</h4>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item">
+                  <div class="portfolio-wrap">
+                    <a href="#portfolio">
+                      <video src="assets/img/portfolio/ticketswift.mp4" class="video-fluid portfolio-video"
+                        alt="TicketSwift" loop muted playsinline></video>
+                      <div class="portfolio-info">
+                        <div class="content">
+                          <h4>TicketSwift: Online Ticket Reservation Web App</h4>
                         </div>
                       </div>
                     </a>
@@ -566,7 +581,6 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -575,7 +589,7 @@
           <div class="col-lg-5">
             <div class="info-box">
               <h3>Contact Info</h3>
-              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.
+              <p>Feel free to reach me through the following contact details.
               </p>
 
               <div class="info-item">
@@ -583,9 +597,8 @@
                   <i class="bi bi-geo-alt"></i>
                 </div>
                 <div class="content">
-                  <h4>Our Location</h4>
-                  <p>A108 Adam Street</p>
-                  <p>New York, NY 535022</p>
+                  <h4>My Location</h4>
+                  <p>Bulacan, Philippines 3013</p>
                 </div>
               </div>
 
@@ -595,8 +608,8 @@
                 </div>
                 <div class="content">
                   <h4>Phone Number</h4>
-                  <p>+1 5589 55488 55</p>
-                  <p>+1 6678 254445 41</p>
+                  <p>+63 961 773 8619</p>
+                  <p>+63 926 493 1682</p>
                 </div>
               </div>
 
@@ -606,8 +619,7 @@
                 </div>
                 <div class="content">
                   <h4>Email Address</h4>
-                  <p>info@example.com</p>
-                  <p>contact@example.com</p>
+                  <p>earlbandiola0403@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -616,10 +628,10 @@
           <div class="col-lg-7">
             <div class="contact-form">
               <h3>Get In Touch</h3>
-              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.
+              <p>Fill out the form below to send me an email. I'll reply to you as soon as possible.
               </p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form id="contactForm" method="post" class="php-email-form">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -699,6 +711,54 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+      e.preventDefault(); // stop normal form submit
+
+      const form = e.target;
+      const loading = form.querySelector(".loading");
+      const errorMsg = form.querySelector(".error-message");
+      const successMsg = form.querySelector(".sent-message");
+
+      // show loading state
+      loading.style.display = "block";
+      errorMsg.style.display = "none";
+      successMsg.style.display = "none";
+
+      // gather form data
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value,
+      };
+
+      try {
+        const res = await fetch("https://bloom-birth.vercel.app/api/sendMail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+        loading.style.display = "none";
+
+        if (res.ok) {
+          successMsg.style.display = "block";
+          form.reset();
+        } else {
+          errorMsg.textContent = result.error || "Something went wrong.";
+          errorMsg.style.display = "block";
+        }
+      } catch (err) {
+        loading.style.display = "none";
+        errorMsg.textContent = "Failed to connect to server.";
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
 
 </body>
 
