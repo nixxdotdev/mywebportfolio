@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: {
-          address: "test@b9231233c8650c7e.maileroo.org",
+          address: "nixxdotdev@b9231233c8650c7e.maileroo.org",
           display_name: "Web Portfolio Contact Form",
         },
         to: {
