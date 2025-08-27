@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         Authorization:
-          "Bearer 69a28928fa9f49a27ce0cde79b2a8f37befb06f2d016f33a0e644af272f2bbd0",
+          "Bearer 81c11e28c5173f98dfedab437ee82006cad0003bf253f876997fb5fc425020f1",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
